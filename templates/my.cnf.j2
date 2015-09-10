@@ -2,12 +2,17 @@
 #password = your_password
 port = {{ mysql_port }}
 socket = {{ mysql_socket }}
+default-character-set=utf8
 
 [mysqld]
 port = {{ mysql_port }}
 bind-address = {{ mysql_bind_address }}
 datadir = {{ mysql_datadir }}
 socket = {{ mysql_socket }}
+
+# Encoding settings
+character-set-server=utf8
+collation-server=utf8_general_ci
 
 # Logging configuration.
 {% if mysql_log_error == 'syslog' or mysql_log == 'syslog' %}
